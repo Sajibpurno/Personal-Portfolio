@@ -1,0 +1,90 @@
+.hero-profile {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: min(120px, 36vw);
+  height: min(120px, 36vw);
+  flex-shrink: 0;
+}
+
+.hero-profile-ring-outer {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  filter: drop-shadow(0 0 24px rgba(170, 66, 255, 0.35))
+    drop-shadow(0 0 48px rgba(127, 64, 255, 0.15));
+}
+
+.hero-profile-ring-spin {
+  position: absolute;
+  inset: -4px;
+
+  background: conic-gradient(
+    from 0deg,
+    #7f40ff,
+    #c2a4ff,
+    #fb8dff,
+    #6eb6ff,
+    #aa42ff,
+    #7f40ff
+  );
+  border: 2px solid rgba(255, 255, 255, 0.18);
+
+  border-radius: 42% 58% 70% 30% / 45% 45% 55% 55%;
+
+  animation:
+    hero-ring-spin 10s linear infinite,
+    liquidBlob 7s ease-in-out infinite;
+
+  filter:
+    blur(2px)
+    saturate(140%);
+
+  opacity: 0.95;
+
+  z-index: 0;
+}
+
+.hero-profile-inner {
+  position: absolute;
+  inset: 5px;
+  z-index: 1;
+
+  overflow: hidden;
+  background: #120a18;
+
+  border-radius: 42% 58% 70% 30% / 45% 45% 55% 55%;
+
+  animation: liquidBlob 7s ease-in-out infinite;
+}
+
+.hero-profile-inner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+
+  border-radius: inherit;
+}
+
+@keyframes hero-ring-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media screen and (min-width: 1025px) {
+  .hero-profile {
+    width: min(168px, 14vw);
+    height: min(168px, 14vw);
+  }
+}
+
+@media screen and (min-width: 1400px) {
+  .hero-profile {
+    width: min(196px, 12vw);
+    height: min(196px, 12vw);
+  }
+}

@@ -1,0 +1,225 @@
+/* =========================
+   DEFAULT = DESKTOP
+========================= */
+
+.character-head-skills {
+  position: absolute;
+  inset: 0;
+  z-index: 4;
+  pointer-events: none;
+  overflow: visible;
+}
+
+.character-skill-pill {
+  position: absolute;
+  padding: 7px 14px;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  color: #efe8ff;
+  border: 2px solid rgba(194, 164, 255, 0.5);
+  border-radius: 999px;
+  background: rgba(11, 8, 12, 0.78);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 0 20px rgba(127, 64, 255, 0.2);
+  white-space: nowrap;
+  animation: character-skill-float 4.2s ease-in-out infinite;
+  filter: drop-shadow(0 0 30px rgba(170, 66, 255, 0.35))
+    drop-shadow(0 0 50px rgba(127, 64, 255, 0.15));
+}
+
+/* next.js */
+.character-skill-pill--0 {
+  top: 30%;
+  left: 30%;
+  animation-delay: 0s;
+}
+
+/* react */
+.character-skill-pill--1 {
+  top: 30%;
+  right: 30%;
+  left: auto;
+  animation-delay: 0.4s;
+}
+
+/* node.js */
+.character-skill-pill--2 {
+  top: 50%;
+  left: 32%;
+  animation-delay: 0.8s;
+}
+
+/* express.js */
+.character-skill-pill--3 {
+  top: 50%;
+  right: 32%;
+  left: auto;
+  animation-delay: 1.1s;
+}
+
+/* tailwind */
+.character-skill-pill--4 {
+  top: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  animation-delay: 1.5s;
+  animation-name: character-skill-float-center;
+}
+
+/* =========================
+   ANIMATIONS
+========================= */
+
+@keyframes character-skill-float {
+  0%,
+  100% {
+    transform: translateY(0) translateX(0);
+  }
+
+  50% {
+    transform: translateY(-6px) translateX(2px);
+  }
+}
+
+@keyframes character-skill-float-center {
+  0%,
+  100% {
+    transform: translateX(-50%) translateY(0);
+  }
+
+  50% {
+    transform: translateX(-50%) translateY(-7px);
+  }
+}
+
+/* =========================
+   LAPTOP
+========================= */
+
+@media screen and (max-width: 1280px) {
+  .character-skill-pill {
+    font-size: 10px;
+    padding: 6px 12px;
+  }
+
+  .character-skill-pill--0 {
+    left: 24%;
+  }
+
+  .character-skill-pill--1 {
+    right: 24%;
+  }
+
+  .character-skill-pill--2 {
+    left: 26%;
+  }
+
+  .character-skill-pill--3 {
+    right: 26%;
+  }
+}
+
+/* =========================
+   TABLET
+========================= */
+
+@media screen and (max-width: 1024px) {
+  .character-skill-pill {
+    font-size: 9px;
+    padding: 5px 10px;
+  }
+
+  .character-skill-pill--0 {
+    top: 28%;
+    left: 18%;
+  }
+
+  .character-skill-pill--1 {
+    top: 28%;
+    right: 18%;
+  }
+
+  .character-skill-pill--2 {
+    top: 50%;
+    left: 20%;
+  }
+
+  .character-skill-pill--3 {
+    top: 50%;
+    right: 20%;
+  }
+
+  .character-skill-pill--4 {
+    top: 8%;
+  }
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media screen and (max-width: 768px) {
+  .character-skill-pill {
+    font-size: 8px;
+    padding: 4px 9px;
+    border-width: 1.5px;
+    letter-spacing: 0.04em;
+  }
+
+  .character-skill-pill--0 {
+    top: 26%;
+    left: 4%;
+  }
+
+  .character-skill-pill--1 {
+    top: 26%;
+    right: 4%;
+  }
+
+  .character-skill-pill--2 {
+    top: 48%;
+    left: 6%;
+  }
+
+  .character-skill-pill--3 {
+    top: 48%;
+    right: 6%;
+  }
+
+  .character-skill-pill--4 {
+    top: 2%;
+  }
+}
+
+/* =========================
+   SMALL MOBILE
+========================= */
+
+@media screen and (max-width: 480px) {
+  .character-skill-pill {
+    font-size: 7px;
+    padding: 4px 8px;
+  }
+
+  .character-skill-pill--0 {
+    left: -2%;
+  }
+
+  .character-skill-pill--1 {
+    right: -2%;
+  }
+
+  .character-skill-pill--2 {
+    left: 0%;
+  }
+
+  .character-skill-pill--3 {
+    right: 0%;
+  }
+
+  .character-skill-pill--4 {
+    top: -2%;
+  }
+}

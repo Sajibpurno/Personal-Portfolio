@@ -37,26 +37,54 @@
 }
 .career-info-box {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  align-items: stretch;
   margin-bottom: 50px;
 }
-.career-info-box p {
-  width: 40%;
-  font-size: 18px;
+.career-info-top {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+  gap: 24px;
+}
+.career-info-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  text-align: right;
+  flex-shrink: 0;
+  gap: 8px;
+}
+.career-info-box p.career-gpa {
+  width: auto;
+  max-width: 100%;
+  font-size: 16px;
   font-weight: 300;
   margin: 0;
+  padding: 0;
+  opacity: 0.88;
+  line-height: 1.35;
 }
 .career-info-in {
   display: flex;
-  width: 40%;
-  justify-content: space-between;
+  flex: 1;
+  min-width: 0;
+  width: auto;
+  justify-content: flex-start;
   gap: 50px;
 }
-.career-info h3 {
-  font-size: 48px;
+.career-info .career-period {
+  font-size: 26px;
+  line-height: 1.2;
   margin: 0;
+  padding-top: 2px;
   font-weight: 500;
-  line-height: 45px;
+  flex-shrink: 0;
+  text-align: right;
+  color: rgba(255, 255, 255, 0.9);
+  letter-spacing: 0.02em;
 }
 
 .career-info h4 {
@@ -74,6 +102,92 @@
   margin: 10px 0px;
   color: var(--accentColor);
 }
+
+.career-leadership {
+  width: 100%;
+  max-width: 900px;
+  margin: 80px auto 0;
+  padding: 0 16px;
+  box-sizing: border-box;
+}
+.career-leadership-heading {
+  margin: 0 0 12px;
+  font-size: 36px;
+  font-weight: 500;
+  line-height: 1.15;
+  letter-spacing: 0.02em;
+  background: linear-gradient(0deg, #7f40ff, #ffffff);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  text-align: center;
+}
+.career-leadership-intro {
+  margin: 0 auto 36px;
+  max-width: 560px;
+  text-align: center;
+  font-size: 15px;
+  font-weight: 300;
+  line-height: 1.5;
+  opacity: 0.75;
+}
+.career-leadership-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+.career-leadership-item {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
+  padding-bottom: 28px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+.career-leadership-item:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+.career-leadership-main {
+  flex: 1;
+  min-width: 0;
+}
+.career-leadership-main h4 {
+  margin: 0 0 6px;
+  font-size: 22px;
+  line-height: 1.25;
+  font-weight: 500;
+  letter-spacing: 0.4px;
+}
+.career-leadership-main h5 {
+  margin: 0 0 10px;
+  font-size: 17px;
+  font-weight: 400;
+  letter-spacing: 0.4px;
+  color: var(--accentColor);
+  text-transform: none;
+}
+.career-leadership-main p {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 300;
+  line-height: 1.5;
+  opacity: 0.88;
+}
+.career-leadership-years {
+  flex-shrink: 0;
+  font-size: 15px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.82);
+  white-space: nowrap;
+  padding-top: 4px;
+}
+
 .career-timeline {
   position: absolute;
   top: -50px;
@@ -138,24 +252,20 @@
   .career-info h4 {
     font-size: 22px;
     line-height: 24px;
-    width: 180px;
   }
   .career-info h5 {
     font-size: 17px;
   }
-  .career-info h3 {
-    font-size: 40px;
+  .career-info .career-period {
+    font-size: 22px;
   }
-  .career-info-box p {
+  .career-info-box p.career-gpa {
     font-size: 14px;
   }
   .career-info-in {
-    width: 45%;
+    flex: 1;
+    min-width: 0;
     gap: 20px;
-  }
-
-  .career-info-box p {
-    width: 45%;
   }
 }
 @media only screen and (max-width: 1025px) {
@@ -172,9 +282,25 @@
     gap: 10px;
     margin-bottom: 70px;
   }
-  .career-info-in,
-  .career-info-box p {
+  .career-info-top {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  .career-info .career-period {
+    text-align: left;
+    padding-top: 0;
+  }
+  .career-info-right {
+    align-items: flex-start;
+    text-align: left;
     width: 100%;
+  }
+  .career-info-in {
+    width: 100%;
+  }
+  .career-info-in,
+  .career-info-right {
     padding-left: 10%;
     box-sizing: border-box;
   }
@@ -183,6 +309,13 @@
   }
   .career-container {
     width: calc(100% - 25px);
+  }
+  .career-leadership-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .career-leadership-years {
+    padding-top: 0;
   }
 }
 @media only screen and (max-width: 600px) {
@@ -198,11 +331,11 @@
   .career-info-in {
     gap: 0px;
   }
-  .career-info h3 {
-    font-size: 33px;
+  .career-info .career-period {
+    font-size: 18px;
   }
   .career-info-in,
-  .career-info-box p {
+  .career-info-right {
     padding-left: 5%;
   }
   .career-section {
@@ -212,5 +345,14 @@
     align-items: start;
     place-items: inherit;
     justify-content: left;
+  }
+  .career-leadership-heading {
+    font-size: 28px;
+  }
+  .career-leadership-main h4 {
+    font-size: 18px;
+  }
+  .career-leadership-main h5 {
+    font-size: 15px;
   }
 }

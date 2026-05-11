@@ -156,11 +156,19 @@
   transform: translate(-50%, -50%);
   border-radius: 50%;
 }
-.landing-intro {
+.landing-hero-with-profile {
   position: absolute;
   z-index: 9;
   top: 12%;
   left: 0;
+  display: flex;
+  gap: 10px;
+  max-width: min(480px, 94vw);
+}
+
+.landing-intro {
+  position: relative;
+  z-index: 1;
 }
 .landing-intro h2 {
   margin: 0;
@@ -302,11 +310,15 @@ h2.landing-info-h2 {
   .character-model::before {
     display: none;
   }
-  .landing-intro {
+  .landing-hero-with-profile {
     top: 50%;
     left: auto;
     right: 66%;
     transform: translate(0%, -50%);
+    flex-direction: row;
+    align-items: center;
+    gap: clamp(18px, 2.2vw, 36px);
+    max-width: none;
   }
 
   .landing-info {
@@ -320,11 +332,14 @@ h2.landing-info-h2 {
   }
 }
 @media screen and (min-width: 1200px) {
-  .landing-intro {
+  .landing-hero-with-profile {
     top: 50%;
     left: auto;
     right: 70%;
     transform: translate(0%, -50%);
+    flex-direction: row;
+    align-items: center;
+    gap: clamp(20px, 2.4vw, 44px);
   }
 
   .landing-info {

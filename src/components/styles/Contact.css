@@ -35,6 +35,28 @@ a.contact-social {
   font-size: 23px;
   margin: 0;
 }
+.contact-box-brand h2.contact-brand-name {
+  font-weight: 500;
+  font-size: 2.25rem;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  margin: 0;
+  background: linear-gradient(0deg, #7f40ff, #ffffff);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+@media only screen and (min-width: 1024px) {
+  .contact-box-brand h2.contact-brand-name {
+    font-size: 2.5rem;
+  }
+}
+@media only screen and (min-width: 1400px) {
+  .contact-box-brand h2.contact-brand-name {
+    font-size: 3rem;
+  }
+}
 .contact-box h2 > span {
   color: var(--accentColor);
 }
@@ -50,8 +72,11 @@ a.contact-social {
   .contact-section h3 {
     font-size: 50px;
   }
-  .contact-box h2 {
+  .contact-box h2:not(.contact-brand-name) {
     font-size: 20px;
+  }
+  .contact-box-brand h2.contact-brand-name {
+    font-size: 1.875rem;
   }
   a.contact-social {
     font-size: 22px;
@@ -61,8 +86,11 @@ a.contact-social {
   .contact-section h3 {
     font-size: 40px;
   }
-  .contact-box h2 {
+  .contact-box h2:not(.contact-brand-name) {
     font-size: 18px;
+  }
+  .contact-box-brand h2.contact-brand-name {
+    font-size: 1.75rem;
   }
   a.contact-social {
     font-size: 20px;

@@ -11,6 +11,11 @@
   height: 100vh;
   box-sizing: border-box;
   will-change: transform;
+  /* Stay above following sections (e.g. TechStack canvas) while ScrollTrigger pin is active */
+  position: relative;
+  z-index: 20;
+  isolation: isolate;
+  background-color: var(--backgroundColor);
 }
 .work-container {
   margin: auto;
