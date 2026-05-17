@@ -60,41 +60,55 @@ const projects = [
 
 const Work = () => {
   useGSAP(() => {
-    let translateX: number = 0;
+    const getScrollDistance = () => {
+      const flex = document.querySelector(".work-flex") as HTMLElement | null;
+      const container = document.querySelector(
+        ".work-container"
+      ) as HTMLElement | null;
+      const boxes = document.querySelectorAll(".work-box");
 
-    function setTranslateX() {
-      const box = document.getElementsByClassName("work-box");
-      const rectLeft = document
-        .querySelector(".work-container")!
-        .getBoundingClientRect().left;
-      const rect = box[0].getBoundingClientRect();
-      const parentWidth = box[0].parentElement!.getBoundingClientRect().width;
-      let padding: number =
-        parseInt(window.getComputedStyle(box[0]).padding) / 2;
-      translateX = rect.width * box.length - (rectLeft + parentWidth) + padding;
-    }
+      if (!flex || !container || boxes.length === 0) return 0;
 
-    setTranslateX();
+      const lastBox = boxes[boxes.length - 1] as HTMLElement;
+      const flexStyle = window.getComputedStyle(flex);
+      const paddingRight = parseFloat(flexStyle.paddingRight) || 0;
+      const marginLeft = Math.abs(parseFloat(flexStyle.marginLeft) || 0);
 
-    let timeline = gsap.timeline({
+      const contentEnd =
+        lastBox.offsetLeft + lastBox.offsetWidth + paddingRight;
+      const visibleWidth = container.clientWidth;
+
+      return Math.max(0, contentEnd - visibleWidth + marginLeft);
+    };
+
+    const timeline = gsap.timeline({
       scrollTrigger: {
         trigger: ".work-section",
         start: "top top",
-        end: `+=${translateX}`,
+        end: () => `+=${getScrollDistance()}`,
         scrub: true,
         pin: true,
         id: "work",
+        invalidateOnRefresh: true,
       },
     });
 
     timeline.to(".work-flex", {
-      x: -translateX,
+      x: () => -getScrollDistance(),
       ease: "none",
     });
+
+    const refreshScroll = () => ScrollTrigger.refresh();
+
+    window.addEventListener("resize", refreshScroll);
+    window.addEventListener("load", refreshScroll);
+    requestAnimationFrame(refreshScroll);
 
     return () => {
       timeline.kill();
       ScrollTrigger.getById("work")?.kill();
+      window.removeEventListener("resize", refreshScroll);
+      window.removeEventListener("load", refreshScroll);
     };
   }, []);
 

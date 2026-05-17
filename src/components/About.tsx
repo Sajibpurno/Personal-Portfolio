@@ -6,7 +6,6 @@ const About = () => {
       <div className="about-me">
         <h3 className="title">About Me</h3>
         <p className="para">
-        add resume.pdf in public folder
           I&apos;m <strong>Sajib Chanda Purno</strong>, a final-year B.Sc. in CSE
           student at Metropolitan University and a full-stack web developer. I
           work mainly with React, Next.js, Tailwind CSS, Node.js, Express.js,
