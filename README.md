@@ -1,65 +1,45 @@
 # My Portfolio Website - Overview 🚀
 
-This repository contains the open-source version of my personal portfolio website.  
-Feel free to explore the code and use it for learning and inspiration.
+Welcome to my personal portfolio repository! This project showcases my skills, experiences, and the creative frontend development work I've done as a Software Engineer.
 
----
-
-## ⚠️ Usage Notice
-
-This project is shared for learning purposes only.
-
-Please do NOT:
-- Clone or replicate the full website or design
-- Repost it with minor content changes
-- Use this project for commercial/client work
-- Create tutorials or content using this exact project
-
-If you use parts of the code, you must provide proper credit linking back to the original repository.
-
-Build your own version — don’t just copy.
-
-— Moncy Yohannan
-
----
-
-## 🛠️ Instructions
-
-I have modified the GSAP Club plugins using trial versions.  
-⚠️ Note: Trial plugins cannot be used for production or hosting.
-
-For official GSAP Club plugins, refer here:  
-https://gsap.com/docs/v3/Installation/
+Feel free to explore the code for learning, inspiration, or to see how the animations and 3D elements are structured.
 
 ---
 
 ## ⚙️ Tech Stack
 
-React • TypeScript • GSAP • Three.js • WebGL • HTML • CSS • JavaScript
+This portfolio leverages modern frontend technologies and advanced animation libraries to deliver an immersive user experience:
+
+* **Framework:** React.js
+* **Language:** TypeScript / JavaScript (ES6+)
+* **Animations:** GSAP (GreenSock Animation Platform)
+* **3D & WebGL:** Three.js / React Three Fiber
+* **Styling:** Tailwind CSS / HTML5 & CSS3
 
 ---
 
-## 🎨 Assets Usage
+## 🎨 Asset & Animation Setup
 
-Some 3D assets included in this repository are free to use for learning purposes.
-
-However:
-
-- The original 3D avatar used on my live portfolio is NOT included in this repository
-- That avatar is a custom asset created over ~1 month
-- It is not open source and not available for reuse
-
-Any usage, extraction, or redistribution of that avatar from my live website is strictly prohibited.
+* **GSAP Animations:** The smooth scrolling, parallax effects, and complex timeline animations are powered by GSAP. *(Note: If you are using any premium GSAP Club plugins for trial/learning, ensure they are handled according to GSAP's installation guidelines).*
+* **3D Assets & WebGL:** Interactive 3D objects and components are integrated using Three.js to create a dynamic visual experience.
 
 ---
 
-![Protfolio-Preview](https://github.com/user-attachments/assets/3c4557e7-6392-4928-b8a9-7b2476ef4edd)
+## ⚠️ Usage Notice
+
+This repository is shared primarily for learning and portfolio showcase purposes. 
+
+If you find this project helpful and want to use parts of the code for your own learning:
+* Please do **NOT** copy or clone the entire design and website structure directly.
+* Do **NOT** repost it with minor text modifications as your own portfolio.
+* Please provide proper credit linking back to this original repository if you reuse specific animation logic or custom components.
+
+*Build your own unique space on the web — don't just copy-paste!*
 
 ---
 
 ## 📄 License
 
-This project is licensed under the Personal Portfolio License (PPL) v1.0.
+This project is licensed under the MIT License / Personal Portfolio License. Feel free to explore the code responsibly.
 
-See the LICENSE file for full details
-
+Developed with 💻 by **[Sajib Purno](https://github.com/Sajibpurno)**
