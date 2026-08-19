@@ -8,6 +8,20 @@ gsap.registerPlugin(useGSAP);
 
 const projects = [
   {
+    name: "SafeHome — Property Rental & Booking Platform",
+    category: "Full-Stack Web Application",
+    tools: "Next.js, Express.js, MongoDB, Better Auth, JWT, Stripe, Tailwind CSS, HeroUI, Framer Motion",
+    image: "/images/project8.png",
+    link: "https://safe-home-property-rental-booking-p-eight.vercel.app/",
+  },
+  {
+    name: "PetHaven — Pet Adoption Platform",
+    category: "Full-Stack Web Application",
+    tools: "Next.js, Express.js, MongoDB, Better Auth, JWT, Tailwind CSS, HeroUI",
+    image: "/images/project9.png",
+    link: "https://cat-10-kx7m.vercel.app/",
+  },
+  {
     name: "WANDERLUST",
     category: "Full-Stack Web Application",
     tools: "React, Next.js, Node.js, Express.js, MongoDB",
