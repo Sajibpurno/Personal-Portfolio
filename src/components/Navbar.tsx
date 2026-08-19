@@ -42,9 +42,13 @@ const Navbar = () => {
   return (
     <>
       <div className="header">
-        <a href="/#" className="navbar-title" data-cursor="disable">
-          Sajib.Purno
-        </a>
+        <a 
+        href="/#" 
+        className="navbar-title text-2xl font-extrabold gradient-text-anim" 
+        data-cursor="disable"
+      >
+        Sajib.Purno
+      </a>
         <a
           href="mailto:sajibchanda73@gmail.com"
           className="navbar-connect"

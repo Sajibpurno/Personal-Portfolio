@@ -121,6 +121,29 @@ body {
   font-weight: 400;
   text-transform: uppercase;
 }
+/* Custom Animated Gradient Text Class */
+.gradient-text-anim {
+  display: inline-block;
+  background: linear-gradient(90deg, #3b82f6, #a855f7, #ec4899, #3b82f6);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+  animation: moveGradient 4s linear infinite;
+}
+
+@keyframes moveGradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
 
 @media screen and (min-width: 768px) {
   body {
